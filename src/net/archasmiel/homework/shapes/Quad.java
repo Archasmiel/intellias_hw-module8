@@ -1,41 +1,29 @@
 package net.archasmiel.homework.shapes;
 
-import net.archasmiel.homework.shapes.basic.ISimpleBound;
-import net.archasmiel.homework.shapes.basic.Point;
-import net.archasmiel.homework.shapes.basic.Shape;
+import net.archasmiel.homework.shapes.basic.*;
 import net.archasmiel.homework.util.MathHelper;
 
 /**
  *     Quad <br><br>
  *
  *     Takes Point objects as parameters <br>
- *     Is {@link net.archasmiel.homework.shapes.basic.ISimpleBound ISimpleBound}
+ *     Is {@link SimpleBounded SimpleBounded}
  */
-public class Quad extends Shape implements ISimpleBound {
+public class Quad extends Shape implements SimpleBounded, PrintComponents, PrintName {
 
+    public static final String NAME = "quad";
     private final Point p1;
     private final Point p2;
     private final Point p3;
     private final Point p4;
 
-
-
     public Quad(Point p1, Point p2, Point p3, Point p4) {
-        super("quad");
+        super(NAME);
         this.p1 = p1;
         this.p2 = p2;
         this.p3 = p3;
         this.p4 = p4;
     }
-
-
-
-    @Override
-    public void paint() {
-        System.out.println(this.getType() + " paint -> {" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + "}");
-    }
-
-
 
     @Override
     public double getHeight() {
@@ -45,5 +33,25 @@ public class Quad extends Shape implements ISimpleBound {
     @Override
     public double getWidth() {
         return MathHelper.findRange(p1.getX(), p2.getX(), p3.getX(), p4.getX());
+    }
+
+    @Override
+    public void printComponents() {
+        System.out.println("{" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + "}");
+    }
+
+    @Override
+    public void printName() {
+        System.out.println(NAME);
+    }
+
+    @Override
+    public String toString() {
+        return "Quad{" +
+                "p1=" + p1 +
+                ", p2=" + p2 +
+                ", p3=" + p3 +
+                ", p4=" + p4 +
+                '}';
     }
 }

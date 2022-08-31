@@ -5,27 +5,16 @@ package net.archasmiel.homework.shapes.basic;
  *
  *     Takes type parameter. <br>
  */
-public abstract class Shape implements IPaint, IPrintName {
+public abstract class Shape {
 
     private final String type;
-
-
 
     protected Shape(String type) {
         this.type = type;
     }
 
-
-
     public String getType() {
         return type;
-    }
-
-
-
-    @Override
-    public void printName() {
-        System.out.println(getType());
     }
 
     @Override
@@ -34,6 +23,5 @@ public abstract class Shape implements IPaint, IPrintName {
                 "type='" + type + '\'' +
                 '}';
     }
-
 
 }

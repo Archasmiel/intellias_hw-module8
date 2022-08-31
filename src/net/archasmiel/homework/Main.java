@@ -16,35 +16,35 @@ public class Main {
 
         Shape circle = new Circle(p1, 10);
         ShapeHelper.printName(circle);
-        ShapeHelper.paintShape(circle);
+        ShapeHelper.printComponents(circle);
         System.out.println();
 
 
 
         Shape line = new Line(p1, p2);
         ShapeHelper.printName(line);
-        ShapeHelper.paintShape(line);
+        ShapeHelper.printComponents(line);
         System.out.println();
 
 
 
         Shape triangle = new Triangle(p1, p2, p3);
         ShapeHelper.printName(triangle);
-        ShapeHelper.paintShape(triangle);
+        ShapeHelper.printComponents(triangle);
         System.out.println();
 
 
 
         Shape quad = new Quad(p1, p2, p3, p4);
         ShapeHelper.printName(quad);
-        ShapeHelper.paintShape(quad);
+        ShapeHelper.printComponents(quad);
         System.out.println();
 
 
 
         Shape polyline = new Polyline(p1, p2, p3, p4);
         ShapeHelper.printName(polyline);
-        ShapeHelper.paintShape(polyline);
+        ShapeHelper.printComponents(polyline);
         System.out.println();
     }
 

@@ -1,39 +1,27 @@
 package net.archasmiel.homework.shapes;
 
-import net.archasmiel.homework.shapes.basic.ISimpleBound;
-import net.archasmiel.homework.shapes.basic.Point;
-import net.archasmiel.homework.shapes.basic.Shape;
+import net.archasmiel.homework.shapes.basic.*;
 import net.archasmiel.homework.util.MathHelper;
 
 /**
  *     Triangle <br><br>
  *
  *     Takes Point objects as parameters. <br>
- *     Is {@link net.archasmiel.homework.shapes.basic.ISimpleBound ISimpleBound}.
+ *     Is {@link SimpleBounded SimpleBounded}.
  */
-public class Triangle extends Shape implements ISimpleBound {
+public class Triangle extends Shape implements SimpleBounded, PrintComponents, PrintName {
 
+    public static final String NAME = "triangle";
     private final Point p1;
     private final Point p2;
     private final Point p3;
 
-
-
     public Triangle(Point p1, Point p2, Point p3) {
-        super("triangle");
+        super(NAME);
         this.p1 = p1;
         this.p2 = p2;
         this.p3 = p3;
     }
-
-
-
-    @Override
-    public void paint() {
-        System.out.println(this.getType() + " paint -> {" + p1 + ", " + p2 + ", " + p3 + "}");
-    }
-
-
 
     @Override
     public double getHeight() {
@@ -44,4 +32,15 @@ public class Triangle extends Shape implements ISimpleBound {
     public double getWidth() {
         return MathHelper.findRange(p1.getX(), p2.getX(), p3.getX());
     }
+
+    @Override
+    public void printComponents() {
+        System.out.println("{" + p1 + ", " + p2 + ", " + p3 + "}");
+    }
+
+    @Override
+    public void printName() {
+        System.out.println(NAME);
+    }
+
 }
