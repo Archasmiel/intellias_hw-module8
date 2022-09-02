@@ -8,28 +8,18 @@ import net.archasmiel.homework.shapes.basic.*;
  *     Takes Point objects as parameters. <br>
  *     Not {@link SimpleBounded SimpleBounded}.
  */
-public class Polyline extends Shape implements PrintComponents, PrintName {
-
-    public static final String NAME = "polyline";
-    private final Point[] points;
+public class Polyline extends Shape {
 
     public Polyline(Point... points) {
         super(NAME);
         this.points = points;
     }
+    public static final String NAME = "polyline";
 
-    @Override
-    public void printComponents() {
-        StringBuilder builder = new StringBuilder("{");
-        for (Point point: points) {
-            builder.append(point).append(" ");
-        }
-        builder.deleteCharAt(builder.length()-1).append("}");
-        System.out.println(builder);
+    private final Point[] points;
+
+    public Point[] getPoints() {
+        return points;
     }
 
-    @Override
-    public void printName() {
-        System.out.println(NAME);
-    }
 }

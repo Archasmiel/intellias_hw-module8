@@ -9,18 +9,22 @@ import net.archasmiel.homework.util.MathHelper;
  *     Takes Point objects as parameters. <br>
  *     Is {@link SimpleBounded SimpleBounded}.
  */
-public class Triangle extends Shape implements SimpleBounded, PrintComponents, PrintName {
-
-    public static final String NAME = "triangle";
-    private final Point p1;
-    private final Point p2;
-    private final Point p3;
+public class Triangle extends Shape implements SimpleBounded {
 
     public Triangle(Point p1, Point p2, Point p3) {
         super(NAME);
         this.p1 = p1;
         this.p2 = p2;
         this.p3 = p3;
+    }
+    public static final String NAME = "triangle";
+
+    private final Point p1;
+    private final Point p2;
+    private final Point p3;
+
+    public Point[] getPoints() {
+        return new Point[]{ p1, p2, p3 };
     }
 
     @Override
@@ -31,16 +35,6 @@ public class Triangle extends Shape implements SimpleBounded, PrintComponents, P
     @Override
     public double getWidth() {
         return MathHelper.findRange(p1.getX(), p2.getX(), p3.getX());
-    }
-
-    @Override
-    public void printComponents() {
-        System.out.println("{" + p1 + ", " + p2 + ", " + p3 + "}");
-    }
-
-    @Override
-    public void printName() {
-        System.out.println(NAME);
     }
 
 }

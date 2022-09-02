@@ -1,4 +1,4 @@
-package net.archasmiel.homework.shapes.basic;
+package net.archasmiel.homework.util;
 
 /**
  *     Interface for painted shapes.

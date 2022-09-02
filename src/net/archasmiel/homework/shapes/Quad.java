@@ -9,13 +9,7 @@ import net.archasmiel.homework.util.MathHelper;
  *     Takes Point objects as parameters <br>
  *     Is {@link SimpleBounded SimpleBounded}
  */
-public class Quad extends Shape implements SimpleBounded, PrintComponents, PrintName {
-
-    public static final String NAME = "quad";
-    private final Point p1;
-    private final Point p2;
-    private final Point p3;
-    private final Point p4;
+public class Quad extends Shape implements SimpleBounded {
 
     public Quad(Point p1, Point p2, Point p3, Point p4) {
         super(NAME);
@@ -23,6 +17,16 @@ public class Quad extends Shape implements SimpleBounded, PrintComponents, Print
         this.p2 = p2;
         this.p3 = p3;
         this.p4 = p4;
+    }
+    public static final String NAME = "quad";
+
+    private final Point p1;
+    private final Point p2;
+    private final Point p3;
+    private final Point p4;
+
+    public Point[] getPoints() {
+        return new Point[]{ p1, p2, p3, p4 };
     }
 
     @Override
@@ -33,16 +37,6 @@ public class Quad extends Shape implements SimpleBounded, PrintComponents, Print
     @Override
     public double getWidth() {
         return MathHelper.findRange(p1.getX(), p2.getX(), p3.getX(), p4.getX());
-    }
-
-    @Override
-    public void printComponents() {
-        System.out.println("{" + p1 + ", " + p2 + ", " + p3 + ", " + p4 + "}");
-    }
-
-    @Override
-    public void printName() {
-        System.out.println(NAME);
     }
 
     @Override
