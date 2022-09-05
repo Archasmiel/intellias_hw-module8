@@ -8,7 +8,7 @@ import net.archasmiel.homework.shapes.basic.*;
  *     Takes Point objects as parameters. <br>
  *     Is {@link SimpleBounded SimpleBounded}.
  */
-public class Line extends Shape {
+public class Line extends Shape implements OnlyPoints {
 
     public Line(Point p1, Point p2) {
         super(NAME);
@@ -20,6 +20,7 @@ public class Line extends Shape {
     private final Point p1;
     private final Point p2;
 
+    @Override
     public Point[] getPoints() {
         return new Point[] { p1, p2 };
     }

@@ -1,10 +1,9 @@
 package net.archasmiel.homework;
 
+import net.archasmiel.homework.shapes.*;
 import net.archasmiel.homework.shapes.basic.Point;
 import net.archasmiel.homework.shapes.basic.Shape;
-import net.archasmiel.homework.shapes.*;
-import net.archasmiel.homework.util.PrintComponentsHelper;
-import net.archasmiel.homework.util.PrintNameHelper;
+import net.archasmiel.homework.util.PrintHelper;
 
 public class Main {
 
@@ -16,15 +15,12 @@ public class Main {
         Point p3 = new Point(5, 5);
         Point p4 = new Point(6, 6);
 
-        PrintComponentsHelper printComponentsHelper = new PrintComponentsHelper();
-        PrintNameHelper printNameHelper = new PrintNameHelper();
+        PrintHelper printHelper = new PrintHelper();
 
         try {
             Shape circle = new Circle(p1, 10);
-            printNameHelper.setShape(circle);
-            printNameHelper.printName();
-            printComponentsHelper.setShape(circle);
-            printComponentsHelper.printComponents();
+            printHelper.printName(circle);
+            printHelper.printComponents(circle);
         } catch (IllegalStateException e) {
             System.out.println(EXCEPTION_MSG + e.getMessage());
         } finally {
@@ -34,11 +30,9 @@ public class Main {
 
         try {
             Shape line = new Line(p1, p2);
-            printNameHelper.setShape(line);
-            printNameHelper.printName();
-            printComponentsHelper.setShape(line);
+            printHelper.printName(line);
             // throws exception
-            printComponentsHelper.printComponents();
+            printHelper.printComponents(line);
         } catch (IllegalStateException e) {
             System.out.println(EXCEPTION_MSG + e.getMessage());
         } finally {
@@ -48,10 +42,8 @@ public class Main {
 
         try {
             Shape triangle = new Triangle(p1, p2, p3);
-            printNameHelper.setShape(triangle);
-            printNameHelper.printName();
-            printComponentsHelper.setShape(triangle);
-            printComponentsHelper.printComponents();
+            printHelper.printName(triangle);
+            printHelper.printComponents(triangle);
         } catch (IllegalStateException e) {
             System.out.println(EXCEPTION_MSG + e.getMessage());
         } finally {
@@ -61,10 +53,8 @@ public class Main {
 
         try {
             Shape quad = new Quad(p1, p2, p3, p4);
-            printNameHelper.setShape(quad);
-            printNameHelper.printName();
-            printComponentsHelper.setShape(quad);
-            printComponentsHelper.printComponents();
+            printHelper.printName(quad);
+            printHelper.printComponents(quad);
         } catch (IllegalStateException e) {
             System.out.println(EXCEPTION_MSG + e.getMessage());
         } finally {
@@ -74,11 +64,9 @@ public class Main {
 
         try {
             Shape polyline = new Polyline(p1, p2, p3, p4);
-            printNameHelper.setShape(polyline);
-            printNameHelper.printName();
-            printComponentsHelper.setShape(polyline);
+            printHelper.printName(polyline);
             // throws exception
-            printComponentsHelper.printComponents();
+            printHelper.printComponents(polyline);
         } catch (IllegalStateException e) {
             System.out.println(EXCEPTION_MSG + e.getMessage());
         } finally {

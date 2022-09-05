@@ -8,7 +8,7 @@ import net.archasmiel.homework.shapes.basic.*;
  *     Takes Point objects as parameters. <br>
  *     Not {@link SimpleBounded SimpleBounded}.
  */
-public class Polyline extends Shape {
+public class Polyline extends Shape implements OnlyPoints {
 
     public Polyline(Point... points) {
         super(NAME);
@@ -18,6 +18,7 @@ public class Polyline extends Shape {
 
     private final Point[] points;
 
+    @Override
     public Point[] getPoints() {
         return points;
     }

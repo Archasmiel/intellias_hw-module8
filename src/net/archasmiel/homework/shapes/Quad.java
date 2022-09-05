@@ -9,7 +9,7 @@ import net.archasmiel.homework.util.MathHelper;
  *     Takes Point objects as parameters <br>
  *     Is {@link SimpleBounded SimpleBounded}
  */
-public class Quad extends Shape implements SimpleBounded {
+public class Quad extends Shape implements SimpleBounded, OnlyPoints {
 
     public Quad(Point p1, Point p2, Point p3, Point p4) {
         super(NAME);
@@ -25,6 +25,7 @@ public class Quad extends Shape implements SimpleBounded {
     private final Point p3;
     private final Point p4;
 
+    @Override
     public Point[] getPoints() {
         return new Point[]{ p1, p2, p3, p4 };
     }

@@ -9,7 +9,7 @@ import net.archasmiel.homework.util.MathHelper;
  *     Takes Point objects as parameters. <br>
  *     Is {@link SimpleBounded SimpleBounded}.
  */
-public class Triangle extends Shape implements SimpleBounded {
+public class Triangle extends Shape implements SimpleBounded, OnlyPoints {
 
     public Triangle(Point p1, Point p2, Point p3) {
         super(NAME);
@@ -23,6 +23,7 @@ public class Triangle extends Shape implements SimpleBounded {
     private final Point p2;
     private final Point p3;
 
+    @Override
     public Point[] getPoints() {
         return new Point[]{ p1, p2, p3 };
     }
