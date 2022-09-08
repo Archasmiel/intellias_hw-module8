@@ -11,6 +11,13 @@ import net.archasmiel.homework.util.MathHelper;
  */
 public class Quad extends Shape implements SimpleBounded, OnlyPoints {
 
+    public static final String NAME = "quad";
+
+    private final Point p1;
+    private final Point p2;
+    private final Point p3;
+    private final Point p4;
+
     public Quad(Point p1, Point p2, Point p3, Point p4) {
         super(NAME);
         this.p1 = p1;
@@ -18,12 +25,6 @@ public class Quad extends Shape implements SimpleBounded, OnlyPoints {
         this.p3 = p3;
         this.p4 = p4;
     }
-    public static final String NAME = "quad";
-
-    private final Point p1;
-    private final Point p2;
-    private final Point p3;
-    private final Point p4;
 
     @Override
     public Point[] getPoints() {

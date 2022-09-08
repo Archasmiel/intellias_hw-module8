@@ -10,13 +10,14 @@ import net.archasmiel.homework.shapes.basic.*;
  */
 public class Polyline extends Shape implements OnlyPoints {
 
+    public static final String NAME = "polyline";
+
+    private final Point[] points;
+
     public Polyline(Point... points) {
         super(NAME);
         this.points = points;
     }
-    public static final String NAME = "polyline";
-
-    private final Point[] points;
 
     @Override
     public Point[] getPoints() {

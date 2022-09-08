@@ -11,17 +11,18 @@ import net.archasmiel.homework.util.MathHelper;
  */
 public class Triangle extends Shape implements SimpleBounded, OnlyPoints {
 
+    public static final String NAME = "triangle";
+
+    private final Point p1;
+    private final Point p2;
+    private final Point p3;
+
     public Triangle(Point p1, Point p2, Point p3) {
         super(NAME);
         this.p1 = p1;
         this.p2 = p2;
         this.p3 = p3;
     }
-    public static final String NAME = "triangle";
-
-    private final Point p1;
-    private final Point p2;
-    private final Point p3;
 
     @Override
     public Point[] getPoints() {

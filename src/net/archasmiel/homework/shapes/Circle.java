@@ -10,15 +10,16 @@ import net.archasmiel.homework.shapes.basic.*;
  */
 public class Circle extends Shape implements SimpleBounded {
 
+    public static final String NAME = "circle";
+
+    private final Point center;
+    private final double radius;
+
     public Circle(Point center, double radius) {
         super(NAME);
         this.center = center;
         this.radius = radius;
     }
-    public static final String NAME = "circle";
-
-    private final Point center;
-    private final double radius;
 
     public Point getCenter() {
         return center;

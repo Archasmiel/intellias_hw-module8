@@ -7,11 +7,11 @@ package net.archasmiel.homework.shapes.basic;
  */
 public abstract class Shape {
 
+    private final String type;
+
     protected Shape(String type) {
         this.type = type;
     }
-
-    private final String type;
 
     public String getType() {
         return type;

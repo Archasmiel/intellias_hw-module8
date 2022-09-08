@@ -37,6 +37,7 @@ public class PrintHelper implements PrintName, PrintComponents {
             System.out.println(builder.append("]"));
             return;
         }
+
         throw new NullPointerException("Given shape is null");
     }
 

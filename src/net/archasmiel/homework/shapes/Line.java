@@ -10,15 +10,16 @@ import net.archasmiel.homework.shapes.basic.*;
  */
 public class Line extends Shape implements OnlyPoints {
 
+    public static final String NAME = "line";
+
+    private final Point p1;
+    private final Point p2;
+
     public Line(Point p1, Point p2) {
         super(NAME);
         this.p1 = p1;
         this.p2 = p2;
     }
-    public static final String NAME = "line";
-
-    private final Point p1;
-    private final Point p2;
 
     @Override
     public Point[] getPoints() {
